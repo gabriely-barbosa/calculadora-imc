@@ -1,0 +1,214 @@
+/* Importação de fonte externa - google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;200;300;400&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* O box-sizing serve para que ao adicionar um padding, o valor de altura e largura continuem o determinado */
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #18181b;
+}
+
+/* Estilização da tag <main>, de id="container"
+- gap: serve para dar espaçamento entre os elementos */
+#container {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+/* Estilização da largura da imagem */
+#img img {
+    width: 23rem;
+} 
+
+/* Estilização da calculadora */
+#calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    color: white;
+    background-color: #262626;
+    border-radius: 8px;
+}
+
+/* Estilização dor form */
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Estilização do title
+- position: absolute, para posicionar a linha abaixo do titulo */
+#title {
+    font-size: 2.25rem;
+    position: relative;
+}
+
+/* Acrescentar uma linha abaixo do titulo */
+#title::after {
+    position: absolute;
+    content: '';
+    background-color: #D17D9E;
+    width: 8rem;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+/* Estilização da label */
+.input-box label {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3F3F46;
+    padding: 0.3rem;
+    border-radius: 3px;
+    margin-top: 3px;
+}
+
+/* Estilização do span e icone */
+.input-field span,
+.input-field i {
+    color: white;
+    font-size: 1.3rem;
+    padding: 0.6rem 1rem;
+}
+
+/* Estilização do input interior */
+.input-field input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 1.3rem;
+    color: white;
+    padding: 0 0.5rem;
+}
+
+/* Tirar o scroll do input */
+.input-field input::-webkit-outer-spin-button, 
+.input-field input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+/* Tirar a borda do input quando clicado */ 
+.input-field input:focus {
+    outline: none;
+}
+
+/* Estilização do botão */
+#calculate {
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background-color: #D17D9E;
+    color: white;
+    padding: 0.5rem 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Estilização do resultado */
+#result {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    border-top: 1px solid #ffffff34;
+    padding: 0.75rem 0;
+}
+
+/* Estilização do primeiro span da div */
+#bmi {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.25rem;
+}
+
+/* Estilização do segundo span da div
+- last-child: usamos quando queremos pegar a ultima tag, das repetidas, dentro de uma div, por exemplo */
+#bmi span:last-child {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+}
+
+/* Configuração da div de descrição para que tenha uma largura fixa */
+#description {
+    width: 15.5rem;
+}
+
+/* Estilização da <div #more-info> */
+#more-info{
+    border-top: 1px solid #ffffff34;
+    padding-top: 2.5rem;
+}
+
+/* Estilização do link 
+transition: faz com que a cor mude em efeito de transição */
+#more-info a {
+    color: #D17D9E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+/* Adicionando um hover ao link */
+#more-info a:hover {
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/*Estilo para resultados de bmi */
+.normal {
+    color: #16a34a;
+}
+
+.attention {
+    color: #dc2626;
+}
+
+/* Deixando o projeto responsivo */
+@media screen and (max-widht: 1024px) {
+    #img {
+        display: none;
+    }
+}
+
+@media screen and (max-widht> 500px) {
+    #container {
+        width: 100%;
+        height: 100%;
+    }
+
+    #calculator {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        justify-content: center;
+    }
+}
